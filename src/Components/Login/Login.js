@@ -1,21 +1,37 @@
 import React, { useState } from "react";
 import amazonLogo from "../../images/amazonLogo2.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../../firebase";
 import "./Login.css";
 
 const Login = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e) => {
-    e.preventDefualt();
+    e.preventDefault();
     //firebase login
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
-    e.preventDefualt();
-
+    e.preventDefault();
     //firebase create user
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.messsage));
   };
   return (
     <div className="login">

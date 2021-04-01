@@ -8,7 +8,7 @@ import "./Header.css";
 import { useStateValue } from "../../hoc/StateProvider";
 
 const Header = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className="header">

@@ -4,7 +4,7 @@ import "./Product.css";
 import { useStateValue } from "../../hoc/StateProvider";
 
 const Prodcut = ({ id, title, image, price, rating }) => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
   // console.log("basket >>>>", basket);
 
   const addToBasket = () => {

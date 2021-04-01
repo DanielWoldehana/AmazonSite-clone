@@ -6,7 +6,7 @@ import { useStateValue } from "../../hoc/StateProvider";
 import { getBasketTotal } from "../../hoc/reducer";
 
 const Subtotal = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   // let totalPrice = basket.reduce(function (total, arr) {
   //   return total + arr.price;
