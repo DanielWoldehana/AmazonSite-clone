@@ -4,7 +4,7 @@ import { useStateValue } from "../../hoc/StateProvider";
 import "./CheckoutProduct.css";
 
 const CheckoutProduct = ({ id, image, title, price, rating }) => {
-  const [dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   const removeFromBasket = () => {
     //remove items from the Basket
     dispatch({
