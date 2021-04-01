@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Link to="/">
+      <Link className="link" to="/">
         <img className="header__logo" src={logo} alt="amazon logo" />
       </Link>
 
@@ -22,10 +22,12 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello user</span>
-          <span className="header__optionLineTwo">Sign In</span>
-        </div>
+        <Link className="link" to="/login">
+          <div className="header__option">
+            <span className="header__optionLineOne">Hello user</span>
+            <span className="header__optionLineTwo">Sign In</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOne">Returns</span>
           <span className="header__optionLineTwo">& Orders</span>
@@ -34,7 +36,7 @@ const Header = () => {
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
         </div>
-        <Link to="/checkout">
+        <Link className="link" to="/checkout">
           <div className="header__optionBasket">
             <ShoppingCartIcon />
             <span className="header__optionLineTwo header__basketCount">
