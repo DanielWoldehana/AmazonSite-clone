@@ -21,7 +21,7 @@ const Home = () => {
           <Product
             id="12323145"
             title="The lean Startup"
-            price={29.99}
+            price={30}
             image={leanImage}
             rating={5}
           />
@@ -62,7 +62,7 @@ const Home = () => {
           <Product
             id="2356563"
             title="SAMSUNG UN65RU7300FXZA Curved 65-Inch 4K UHD 7 Series Ultra HD Smart TV with HDR and Alexa Compatibility (2019 Model)"
-            price={789.99}
+            price={790}
             image={tv}
             rating={3}
           />
