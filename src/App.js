@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Checkout from "./Components/Checkout/Checkout";
 import Login from "./Components/Login/Login";
 import Payment from "./Components/Payment/Payment";
+import Orders from "./Components/Orders/Orders";
 import { auth } from "./firebase";
 import { useStateValue } from "./hoc/StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
@@ -44,6 +45,10 @@ const App = () => {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>

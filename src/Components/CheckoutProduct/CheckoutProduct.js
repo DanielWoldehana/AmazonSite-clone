@@ -3,7 +3,7 @@ import { useStateValue } from "../../hoc/StateProvider";
 
 import "./CheckoutProduct.css";
 
-const CheckoutProduct = ({ id, image, title, price, rating }) => {
+const CheckoutProduct = ({ id, image, title, price, rating, hideButton }) => {
   const [{}, dispatch] = useStateValue();
   const removeFromBasket = () => {
     //remove items from the Basket
@@ -28,7 +28,9 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
               <p>🌟</p>
             ))}
         </div>
-        <button onClick={removeFromBasket}>Remove from Basket</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
       </div>
     </div>
   );
