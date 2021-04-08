@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
@@ -9,6 +9,12 @@ import { auth } from "../../firebase";
 import "./Header.css";
 
 const Header = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const toggleNav = () => {
+    setShowLinks(!showLinks);
+  };
+
   const [{ basket, user }] = useStateValue();
   const handleAuthentication = () => {
     if (user) {
@@ -21,12 +27,18 @@ const Header = () => {
         <img className="header__logo" src={logo} alt="amazon logo" />
       </Link>
 
-      <div className="header__search">
+      <div className="header__search" id={showLinks ? "hidden" : ""}>
         <input className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
       </div>
 
-      <div className="header__nav">
+      <a onClick={toggleNav} href="#" className={"toggle__button "}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <div className="header__nav" id={showLinks ? "hidden" : ""}>
         <Link className="link" to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
@@ -49,8 +61,7 @@ const Header = () => {
             <span className="header__optionLineTwo">Prime</span>
           </div>
         </Link>
-
-        <Link className="link" to="/checkout">
+        <Link className="link link__optionBasket" to="/checkout">
           <div className="header__optionBasket">
             <ShoppingCartIcon />
             <span className="header__optionLineTwo header__basketCount">
