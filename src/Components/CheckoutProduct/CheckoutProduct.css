@@ -7,6 +7,7 @@
 .checkoutProduct__info {
   width: 50%;
   padding-left: 20px;
+  overflow-wrap: break-word;
 }
 
 .checkoutProduct__info > button {
@@ -30,4 +31,29 @@
 .checkoutProduct__title {
   font-size: 17px;
   font-weight: 800;
+}
+
+@media (max-width: 585px) {
+  .checkoutProduct__image {
+    width: 100px;
+    height: 100px;
+  }
+  .checkoutProduct__title {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .checkoutProduct__rating {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .checkoutProduct__image {
+    width: 70px;
+    height: 70px;
+  }
+  .checkoutProduct__title {
+    font-size: 8px;
+    font-weight: 200;
+  }
 }

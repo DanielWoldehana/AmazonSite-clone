@@ -16,3 +16,16 @@
   font-weight: 500;
   text-align: right;
 }
+
+@media (max-width: 585px) {
+  .order__id {
+    top: 20px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .order__id {
+    display: none;
+  }
+}
